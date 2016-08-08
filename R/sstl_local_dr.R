@@ -83,7 +83,8 @@ sstl_local_dr <- function(data, mlcontrol=spacetime.control(), outdiv) {
       v$spaofit <- lo.fit$fitted
     }
     v
-  }, params = list(mlcontrol = mlcontrol, fml = fml, dropSq = dropSq, condParam = condParam)))
+  }, params = list(mlcontrol = mlcontrol, fml = fml, dropSq = dropSq, condParam = condParam),
+  packages = c("datadr")))
 
   bystat_ddf <- suppressMessages(datadr::divide(rst, by="station.id", update=TRUE))
 
